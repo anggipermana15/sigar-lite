@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGAR Lite - Sistem Tracking Nutrisi & Kebugaran</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>SIGAR Lite 🍏💪</h1>
+        <p>Sistem Tracking Nutrisi & Kebugaran Harian</p>
+    </header>
+
+    <section id="dashboard" class="container">
+        <h2>Dashboard Harian</h2>
+        <div class="summary-cards">
+            <div class="card" id="card-masuk">
+                <h3>Kalori Masuk</h3>
+                <p id="total-masuk" class="calorie-value">0 Kcal</p>
+            </div>
+            <div class="card" id="card-keluar">
+                <h3>Kalori Keluar</h3>
+                <p id="total-keluar" class="calorie-value">0 Kcal</p>
+            </div>
+            <div class="card" id="card-sisa">
+                <h3>Sisa Kalori</h3>
+                <p id="sisa-kalori" class="calorie-value">0 Kcal</p>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="input-section">
+            
+            <div class="form-container">
+                <h3>➕ Tambah Makanan</h3>
+                <form id="form-makanan">
+                    <label for="makanan-pilih">Pilih Makanan:</label>
+                    <select id="makanan-pilih" required>
+                        <option value="">-- Pilih --</option>
+                        </select>
+
+                    <p id="info-unit" style="font-size: 0.8rem; color: var(--color-secondary); margin-top: 5px;"></p>
+                    
+                    <label for="makanan-kalori">Kalori Masuk (Kcal):</label>
+                    <input type="number" id="makanan-kalori" min="1" readonly required>
+                    
+                    <button type="submit" class="btn btn-primary">Tambah Makanan</button>
+                </form>
+            </div>
+
+            <div class="form-container">
+                <h3>➖ Tambah Aktivitas</h3>
+                <form id="form-aktivitas">
+                    <label for="aktivitas-nama">Jenis Aktivitas:</label>
+                    <input type="text" id="aktivitas-nama" required>
+                    
+                    <label for="aktivitas-kalori">Kalori Keluar (Kcal):</label>
+                    <input type="number" id="aktivitas-kalori" min="1" required>
+                    
+                    <button type="submit" class="btn btn-secondary">Tambah Aktivitas</button>
+                </form>
+            </div>
+        </div>
+
+        <section id="history-section">
+            <h2>Riwayat Data Harian</h2>
+            
+            <div class="table-container">
+                <h3>Daftar Makanan</h3>
+                <table id="tabel-makanan">
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Kalori (Kcal)</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="makanan-list">
+                        </tbody>
+                </table>
+            </div>
+
+            <div class="table-container">
+                <h3>Daftar Aktivitas</h3>
+                <table id="tabel-aktivitas">
+                    <thead>
+                        <tr>
+                            <th>Jenis</th>
+                            <th>Kalori (Kcal)</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="aktivitas-list">
+                        </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+    <div id="notification-toast" class="toast-hidden"></div>
+
+    <script src="js/utils.js" type="module"></script>
+    <script src="js/app.js" type="module"></script>
+</body>
+    
+</html>
